@@ -1,0 +1,41 @@
+[
+	{
+		"empresaId": 1,
+		"nomeEmpresa": "EMPRESA UM S/A",
+		"cnpj": "13182905000171",
+		"dadosBancario": {
+			"banco": 999,
+			"bancoNome": "CONTA SIMPLES",
+			"agencia": 1,
+			"conta": 123456,
+			"digitoConta": "1"
+		},
+		"saldo": 10500.00
+	},
+	{
+		"empresaId": 2,
+		"nomeEmpresa": "EMPRESA DOIS S/A",
+		"cnpj": "77253158000106",
+		"dadosBancario": {
+			"banco": 999,
+			"bancoNome": "CONTA SIMPLES",
+			"agencia": 1,
+			"conta": 678956,
+			"digitoConta": "1"
+		},
+		"saldo": 25500.00
+	},
+	{
+		"empresaId": 3,
+		"nomeEmpresa": "EMPRESA TRES S/A",
+		"cnpj": "46410071000163",
+		"dadosBancario": {
+			"banco": 999,
+			"bancoNome": "CONTA SIMPLES",
+			"agencia": 1,
+			"conta": 789204,
+			"digitoConta": "1"
+		},
+		"saldo": 12500.00
+	}
+]
