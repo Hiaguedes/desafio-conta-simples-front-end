@@ -3,6 +3,7 @@ import {BrowserRouter, Route, Switch} from 'react-router-dom';
 
 
 import LoginPage from './pages/LoginPage/LoginPage';
+import CompanyProfile from './pages/CompanyProfile/CompanyProfile';
 
 function Router(){
 
@@ -10,6 +11,7 @@ function Router(){
         <BrowserRouter>
             <Switch>
                 <Route  exact path="/" component={LoginPage}/>
+                <Route   path="/empresa/:id" component={CompanyProfile}/>
             </Switch>
         </BrowserRouter>
     )

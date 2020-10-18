@@ -6,7 +6,6 @@ Ao concluir o desafio, descrever no README como fazemos para rodar o projeto ou 
 As apis consumidas devem ser "mockadas";
 Criar integração mockada com api REST ou GRAPHQL;
 
-
 1. Criar tela de Login para um Internet Banking;
 
 2. Criar a Home do Internet Banking da Conta Simples (dados da empresa, saldo, grafico de entrada e saida);
