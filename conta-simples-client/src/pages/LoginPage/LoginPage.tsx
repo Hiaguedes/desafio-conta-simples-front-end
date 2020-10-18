@@ -22,11 +22,12 @@ function LoginPage() {
 
     function handleFormData(){
         for(let i =0; i<object.length;i++){
-            if(object[i].cnpj === inputText) {
+            if(object[i].cnpj === inputText.replace(/\D/g,'')) {
+                console.log(i)
               history.push(`/empresa/${i+1}`)
             }
-            return null;
         }
+        return null;
     }
 
     return (
