@@ -30,13 +30,23 @@ function LoginPage() {
         setErrorInput(true);
     }
 
+    function handleEnterKey(e: React.KeyboardEvent<HTMLInputElement>){
+        if(e.key === 'Enter') e.preventDefault()
+    }
+
     return (
         <main className="login_container">
             <form  className="login_form">
                 <h2 className="login_title">Login</h2>
                 <div className="login-input_container">
                     <label><p className="login_acessibility_label">CNPJ:</p>
-                        <input onChange={e => setInputText(e.target.value)} className={`login_input  ${(errorInput ? "login_input--erro" : "")}`}  type="text" placeholder="Coloque o CNPJ"/>
+                        <input 
+                            onChange={e => setInputText(e.target.value)}
+                             className={`login_input  ${(errorInput ? "login_input--erro" : "")}`}  
+                             type="text" 
+                             placeholder="Coloque o CNPJ"
+                             onKeyDown={e => handleEnterKey(e)}
+                             />
                     </label>
                     {
                     errorInput ? 
