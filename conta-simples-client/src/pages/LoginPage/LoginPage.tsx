@@ -35,7 +35,9 @@ function LoginPage() {
             <form  className="login_form">
                 <h2 className="login_title">Login</h2>
                 <div className="login-input_container">
-                    <input onChange={e => setInputText(e.target.value)} className={`login_input  ${(errorInput ? "login_input--erro" : "")}`}  type="text" placeholder="Coloque o CNPJ"/>
+                    <label><p className="login_acessibility_label">CNPJ:</p>
+                        <input onChange={e => setInputText(e.target.value)} className={`login_input  ${(errorInput ? "login_input--erro" : "")}`}  type="text" placeholder="Coloque o CNPJ"/>
+                    </label>
                     {
                     errorInput ? 
                     (<div className="erro_message">Alguma Coisa Está Errada</div>): 

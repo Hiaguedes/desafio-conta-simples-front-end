@@ -36,6 +36,10 @@
     display: flex;
     flex-direction: column;
 }
+.login_acessibility_label{
+    font-size: 0;
+    text-indent: -9999px;
+}
 .login_input{
     height: 2rem;
     margin: 0 2rem;
@@ -43,6 +47,7 @@
     border: 1px solid #838383;
     padding-left: 0.5rem;
     font-size: 1.2rem;
+    width: calc(100% - 2px - 4rem);
 }
 
 .login_input--erro{
