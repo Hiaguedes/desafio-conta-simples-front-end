@@ -48,7 +48,8 @@
 .login_input--erro{
     border: rgb(224, 59, 59) 2px solid;
     color:  rgb(224, 59, 59);
-
+    background: url(../../img/alert.svg) no-repeat right 15px center;
+    background-size: 25px;
 }
 
 .login_input--erro::placeholder{
