@@ -12,7 +12,9 @@
     "axios": "^0.20.0",
     "cors": "^2.8.5",
     "react": "^16.14.0",
+    "react-charts": "^2.0.0-beta.7",
     "react-dom": "^16.14.0",
+    "react-resizable": "^1.11.0",
     "react-router": "^5.2.0",
     "react-router-dom": "^5.2.0",
     "react-scripts": "3.4.3",
@@ -42,6 +44,7 @@
   "devDependencies": {
     "@types/axios": "^0.14.0",
     "@types/react": "^16.9.53",
+    "@types/react-resizable": "^1.7.2",
     "@types/react-router-dom": "^5.1.6"
   }
 }
