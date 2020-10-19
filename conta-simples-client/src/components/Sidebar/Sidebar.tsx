@@ -1,8 +1,7 @@
 import React, { useEffect, useState } from 'react';
-import './CompanyProfile.css';
+import './Sidebar.css';
 import api from '../../services/api';
-import {useParams} from 'react-router-dom';
-import Sidebar from '../../components/Sidebar/Sidebar';
+import {useParams} from 'react-router-dom'
 
 interface Params {
     id: string;
@@ -26,12 +25,13 @@ function CompanyProfile(){
 
     if(!companyInfo) return <p>Empresa não encontrada error 404</p>
     return(
-        <div className="company-profile">
-            <Sidebar />
-            <div className="company-container">
-                <p>ooo</p>
-            </div>
-        </div>
+            <aside className="sidebar">
+                <div className="sidebar_container">
+                <h1 className="sidebar_title">Bem Vindo {companyInfo[0].nomeEmpresa}!</h1>
+                    <p className="sidebar_balance_label">Seu saldo é de:</p>
+                    <h2 className="sidebar_balance">R$ {companyInfo[0].saldo}</h2>
+                </div>
+            </aside>
     )
 
 }

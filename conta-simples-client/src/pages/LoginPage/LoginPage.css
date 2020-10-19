@@ -9,9 +9,9 @@
 }
 
 .login_form{
-    width:35%;
-    height: 30rem;
-    max-width: 25rem;
+    width:   55%;
+    height: 65%;
+    max-width: 50rem;
     background-color: #fefefe;
     display: grid;
     grid-template-rows: 1fr 1fr 0.5fr;

@@ -1,0 +1,10 @@
+.company-profile{
+    display:flex;
+}
+
+.company-container{
+    z-index: 2;
+}
+
+
+
