@@ -21,61 +21,60 @@ interface CompanyInfo {
     }[]
 }
 
+interface CompanyTransactions {
+    dataTransacao: string;
+    valor: number;
+    finalCartao: number;
+    tipoTransacao: string;
+    descricaoTransacao: string;
+    credito: boolean;
+}
+
+interface DataChart {
+    primary: Date;
+    secondary: number;
+}
+
 function CompanyProfile(){
     const params = useParams<Params>();
     const {id} = params;
     const [companyInfo, setCompanyInfo] = useState<CompanyInfo>()
+    const [companyTransactions, setCompanyTransactions] = useState<CompanyTransactions[]>([]);
+    const [dataEntry,setDataEntry] =useState<DataChart[]>([{primary: new Date(), secondary: 0}]);
+    const [dataExit,setDataExit] =useState<DataChart[]>([{primary: new Date(), secondary: 0}]);
 
     useEffect(()=>{
         api.get(`empresas/${id}`)
-        .then(res => setCompanyInfo(res.data)
-        )},[id])
+        .then(res => setCompanyInfo(res.data))
 
-        const data = [
-            {
-              // individual series
-              label: "Entrada",
-              // datum array
-              data: [
-                {
-                  // individual datum
-                  primary: new Date(2011,10,1), // primary value
-                  secondary: 20 // secondary value
-                },
-                {
-                  // individual datum
-                  primary: new Date(2011,10,2), // primary value
-                  secondary: 250 // secondary value
-                },
-                {
-                  // individual datum
-                  primary: new Date(2011,10,2,8), // primary value
-                  secondary: 250 // secondary value
-                }
-              ]
-            },
-            {
-              label: "Saída",
-              data: [
-                {
-                  // individual datum
-                  primary: new Date(2011,10,1), // primary value
-                  secondary: 50 // secondary value
-                },
-                {
-                  // individual datum
-                  primary: new Date(2011,10,2), // primary value
-                  secondary: 20 // secondary value
-                },
-                {
-                  // individual datum
-                  primary: new Date(2011,10,3), // primary value
-                  secondary: 130 // secondary value
-                }
-              ]
-            }
-          ];
+        api.get(`transacoes/${id}`)
+        .then(res => setCompanyTransactions(res.data))
+
         
+    },[id])
+
+    useEffect(()=>{
+
+        let dataEntryLine :DataChart[] = companyTransactions
+                    .filter(transaction => (transaction.tipoTransacao !== "CARD" && transaction.tipoTransacao !== "PAY"))
+                    .map(transaction =>{
+                        return{
+                        primary: new Date(transaction.dataTransacao)
+                        ,secondary: transaction.valor}
+                        })
+
+    let dataExitLine :DataChart[] = companyTransactions
+    .filter(transaction => (transaction.tipoTransacao !== "TED_IN" && transaction.tipoTransacao !== "SLIP_IN"))
+    .map(transaction =>{
+        return{
+        primary: new Date(transaction.dataTransacao)
+        ,secondary: transaction.valor}
+        })
+
+            setDataEntry(dataEntryLine)
+            setDataExit(dataExitLine)
+    },[companyTransactions])
+
           const series = React.useMemo(
             () => ({
               showPoints: false
@@ -87,17 +86,47 @@ function CompanyProfile(){
             () => [
               {
                 primary: true,
-                type: "utc",
-                position: "bottom"
+                type: "time",
+                position: "bottom",
+                showGrid: false
                 // filterTicks: (ticks) =>
                 //   ticks.filter((date) => +timeDay.floor(date) === +date),
+                //eixo x
               },
-              { type: "linear", position: "left" }
+              { 
+                  type: "linear",
+                  position: "left",
+                  show:false,
+                  hardMax:7000 
+                  //eixo y
+                }
             ],
             []
           );
 
+
+          const info = [
+            {
+              // individual series
+              label: "Entrada",
+              // datum array
+              data: dataEntry
+            },
+            {
+                // individual series
+                label: "Saída",
+                // datum array
+                data: dataExit
+              }
+        ]
+
     if(!companyInfo) return <p>Empresa não encontrada error 404</p>
+
+
+
+        //const result = data.map(ele => ({primary: new Date(ele.primary),secondary: ele.secondary}))
+
+
     return(
         <main className="company-profile">
             <Sidebar />
@@ -109,9 +138,9 @@ function CompanyProfile(){
                         <p>Agencia: {companyInfo[0].dadosBancario.agencia}</p>
                         <p>Conta: {companyInfo[0].dadosBancario.conta}</p>
                         <p>Digito Conta: {companyInfo[0].dadosBancario.digitoConta}</p>
-                </details>
+                </details>  
                 <div className="chart">
-                    <Chart  data={data} series={series} axes={axes} tooltip/>
+                <Chart  data={info} series={series} axes={axes} tooltip/>
                 </div>
             </div>
         </main>
