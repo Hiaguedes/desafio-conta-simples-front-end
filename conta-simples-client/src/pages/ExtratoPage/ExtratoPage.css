@@ -11,3 +11,54 @@
     font-size: 1.5rem;
     font-weight: 800;
 }
+
+.table_container{
+    width: 100%;
+    display:flex;
+    justify-content: center;
+}
+.table{
+    margin: 1rem 0;
+}
+.table_header{
+    width: 5rem;
+    background-color:#212529;
+    color: #fff;
+}
+.table_header-data{
+    vertical-align: middle;
+    height: 3rem;
+    padding-left: 0.5rem;
+    font-weight: 800;
+    text-align: left;
+}
+
+
+.table_body-data{
+    width: 5rem;
+    padding: 1rem 0 0.8rem 0.5rem;
+    max-width: 5rem;
+    overflow-wrap: break-word;
+}
+.entry{
+    background-color: rgb(43, 199, 126)
+}
+.exit{
+    background-color: rgba(206, 36, 13, 0.795);
+}
+
+.table tr:last-child td:first-child {
+    border-bottom-left-radius: 10px;
+}
+
+.table tr:last-child td:last-child {
+    border-bottom-right-radius: 10px;
+}
+
+.table th:first-child {
+    border-top-left-radius: 10px;
+}
+
+.table th:last-child {
+    border-top-right-radius: 10px;
+}
