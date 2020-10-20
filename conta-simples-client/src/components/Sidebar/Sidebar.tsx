@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import './Sidebar.css';
 import api from '../../services/api';
-import {useParams} from 'react-router-dom'
+import {useParams, Link} from 'react-router-dom';
 
 interface Params {
     id: string;
@@ -30,6 +30,9 @@ function CompanyProfile(){
                 <h1 className="sidebar_title">Bem Vindo {companyInfo[0].nomeEmpresa}!</h1>
                     <p className="sidebar_balance_label">Seu saldo é de:</p>
                     <h2 className="sidebar_balance">R$ {companyInfo[0].saldo}</h2>
+                    <div className="sidebar_menu">
+                        <Link to={`extrato/${id}`} style={{textDecoration: 'none'}}><p className="sidebar_menu-extrato">Visualizar Extrato</p></Link>
+                    </div>
                 </div>
             </aside>
     )

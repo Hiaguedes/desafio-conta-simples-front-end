@@ -31,3 +31,24 @@
     color: #fefefe;
     font-weight: 1000;
 }
+
+.sidebar_menu{
+    margin: 2rem 0;
+}
+
+.sidebar_menu-extrato{
+    letter-spacing: 0.15rem;
+    color: #fefefe;
+    font-weight: 500;
+    font-size:1.2rem;
+}
+
+.sidebar_menu-extrato:before{
+    content: '';
+    display: inline-block;
+    width: 1.2rem;
+    height: 1.2rem;
+    background: url(../../img/icon_extrato.svg) no-repeat;
+    background-size: 1.2rem;
+    margin-right: 0.5rem;
+}
