@@ -13,7 +13,7 @@ function Router(){
             <Switch>
                 <Route  exact path="/" component={LoginPage}/>
                 <Route  exact path="/empresa/:id" component={CompanyProfile}/>
-                <Route  path="/empresa/extrato/:id" component={ExtratoPage}/>
+                <Route  exact  path="/empresa/extrato/:id" component={ExtratoPage}/>
             </Switch>
         </BrowserRouter>
     )
