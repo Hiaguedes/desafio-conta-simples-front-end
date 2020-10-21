@@ -72,10 +72,10 @@ export default function ExtratoPage() {
             <div className="extract-page_container">
                 <h2 className="extract-page_title">Extrato da empresa</h2>
                 <div className="filtros_container">
-                    <h3>Filtros para a Tabela</h3>
+                    <h3 className="filtros_titulo">Filtros para a Tabela</h3>
                     <div className="filtro">
 
-                    <div>
+                    <div className="filtro_individual">
                     <p>Tipo da Transação: </p>
                     <select onChange={(e) => handleTransactionType(e)}>
                         <option value="any">Qualquer</option>
@@ -85,7 +85,7 @@ export default function ExtratoPage() {
                         <option value="PAY">PAY</option>
                     </select>
                     </div>
-                    <div>
+                    <div className="filtro_individual">
                         <p>Crédito ou Débito?</p>
                     <select onChange={(e) => handlePaymentFilter(e)}>
                         <option value="any">Qualquer</option>
