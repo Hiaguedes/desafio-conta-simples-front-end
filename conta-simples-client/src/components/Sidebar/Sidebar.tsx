@@ -24,6 +24,7 @@ function Sidebar({nomeEmpresa,saldo}: CompanyInfo) {
                     <div className="sidebar_menu">
                         <Link to={`/empresa/${id}`} style={{textDecoration: 'none'}}><p className="sidebar_menu-item">Home</p></Link>
                         <Link to={`/empresa/extrato/${id}`} style={{textDecoration: 'none'}}><p className="sidebar_menu-item">Visualizar Extrato</p></Link>
+                        <Link to={`/empresa/cards/${id}`} style={{textDecoration: 'none'}}><p className="sidebar_menu-item">Cartões</p></Link>
                     </div>
                 </div>
             </aside>

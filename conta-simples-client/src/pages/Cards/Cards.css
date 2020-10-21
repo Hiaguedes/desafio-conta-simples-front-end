@@ -1,0 +1,8 @@
+.cards-page{
+    display:flex;
+}
+
+.cards-container{
+    margin: 2rem 3rem;
+    width: 100%;
+}

@@ -63,3 +63,8 @@
     background: url(../../img/icon_extrato.svg) no-repeat;
     background-size: 1.2rem;
 }
+
+.sidebar_menu a:nth-child(3)  .sidebar_menu-item:before {
+    background: url(../../img/card.svg) no-repeat;
+    background-size: 1.2rem;
+}
