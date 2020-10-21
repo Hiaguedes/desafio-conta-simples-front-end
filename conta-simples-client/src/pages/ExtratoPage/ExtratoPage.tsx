@@ -30,6 +30,9 @@ interface Params {
     id: string;
 }
 
+
+
+
 export default function ExtratoPage() {
 
 
@@ -40,6 +43,7 @@ export default function ExtratoPage() {
     const [buttonClicked,setButtonClicked] = useState(-1);
     const [selectTransactionFilter,setSelectTransactionFilter] = useState('any');
     const [selectPaymentFilter,setSelectPaymentFilter] = useState('any');
+    const [kindsOfPayment,setKindsOfPayment] = useState<string[]>([]);
 
     useEffect(()=>{
         api.get(`empresas/${id}`)
@@ -50,6 +54,11 @@ export default function ExtratoPage() {
 
         
     },[id])
+
+        if(!companyTransactions) return <p>Você não fez nenhuma transação conosco. Sinta-se a vontade para fazer quando você bem entender ;D</p>
+        companyTransactions.forEach(ele => {
+            if(!kindsOfPayment.includes(ele.tipoTransacao)) return setKindsOfPayment([...kindsOfPayment,ele.tipoTransacao])
+        })
 
     function handleClickedButton(index:number) {
         setButtonClicked(index);
@@ -63,6 +72,7 @@ export default function ExtratoPage() {
     function handlePaymentFilter(e: React.ChangeEvent<HTMLSelectElement>){
         setSelectPaymentFilter(e.target.value);
     }
+    
 
     if(!companyInfo) return <p>Empresa não encontrada erro 404</p>
     //console.log(selectTransactionFilter,selectPaymentFilter)
@@ -79,10 +89,10 @@ export default function ExtratoPage() {
                     <p>Tipo da Transação: </p>
                     <select onChange={(e) => handleTransactionType(e)}>
                         <option value="any">Qualquer</option>
-                        <option value="TED_IN">TED IN</option> {/*Desculpa a ignorância mas não sei mesmo o que seria TED IN ou SLIP IN hahaha (muito menos o SLIP e como não achei nada na internet então sorry*/}
-                        <option value="SLIP_IN">SLIP IN</option>
-                        <option value="CARD">CARD</option>
-                        <option value="PAY">PAY</option>
+                        {kindsOfPayment.map((ele,index)=>{
+                        return(<option key={index} value={ele}>{ele.replace('_',' ')}</option>); 
+                        })
+                    }
                     </select>
                     </div>
                     <div className="filtro_individual">
