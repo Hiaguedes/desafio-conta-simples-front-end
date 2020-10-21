@@ -48,6 +48,18 @@ icone extrato: <https://www.flaticon.com/br/autores/photo3idea-studio>
 
 Home Icon: <https://www.flaticon.com/authors/freepik>
 
+Card Icon: <https://www.flaticon.com/authors/pixel-perfect>
+
 ## TODO (coisas a mais que seria interessante fazer)
 
 Criar um botão que filtre os dados de entrada e saída por semana
+
+Componetizar os filtros na tabela do extrato
+
+Deixar mais responsivo
+
+Estilizar mais
+
+Comentários
+
+Ver uma forma de fazer apenas uma requisição só e transferir as informações entre os componentes
