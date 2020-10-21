@@ -6,13 +6,13 @@ Ao concluir o desafio, descrever no README como fazemos para rodar o projeto ou 
 As apis consumidas devem ser "mockadas";
 Criar integração mockada com api REST ou GRAPHQL;
 
-1. Criar tela de Login para um Internet Banking;
+1. Criar tela de Login para um Internet Banking; (done)
 
-2. Criar a Home do Internet Banking da Conta Simples (dados da empresa, saldo, grafico de entrada e saida);
+2. Criar a Home do Internet Banking da Conta Simples (dados da empresa, saldo, grafico de entrada e saida); (done com ressalvas)
 
-3. Criar extrato da empresa e detalhe do extrato;
+3. Criar extrato da empresa e detalhe do extrato;(done)
 
-4. Permitir filtrar extrato por Tipo de Transação e flag de "Crédito" e "Débito";
+4. Permitir filtrar extrato por Tipo de Transação e flag de "Crédito" e "Débito";(done)
 
 5. Criar um tela para mostrar transações agrupadas por cartão, apresentar finalCartao e valor;
 
@@ -39,3 +39,15 @@ Nosso foco é identificar suas habilidade não só em programação, mas também
 - Histórico de commits (estrutura e qualidade)
 
 - UX: A interface é de fácil uso e auto-explicativa
+
+## Créditos as imagens de
+
+Alert icon: <https://dinosoftlabs.com/>
+
+icone extrato: <https://www.flaticon.com/br/autores/photo3idea-studio>
+
+Home Icon: <https://www.flaticon.com/authors/freepik>
+
+## TODO (coisas a mais que seria interessante fazer)
+
+Criar um botão que filtre os dados de entrada e saída por semana
