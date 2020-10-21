@@ -19,6 +19,7 @@
 }
 .table{
     margin: 1rem 0;
+    width: 50%;
 }
 .table_header{
     width: 5rem;
@@ -35,10 +36,40 @@
 
 
 .table_body-data{
-    width: 5rem;
+    width: 10rem;
     padding: 1rem 0 0.8rem 0.5rem;
-    max-width: 5rem;
     overflow-wrap: break-word;
+}
+.table_body-button{
+    width: 10rem;
+    vertical-align: middle;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+.table_button{
+    margin: 4px 10px 4px 10px;
+    border: none;
+    outline: none;
+    padding: 0.8rem;
+    box-shadow: 2px 1px 2px rgb(83, 83, 83);
+}
+.table_button:active{
+    box-shadow: 0 0 0 white;
+    margin: 6px 10px 2px 10px;
+}
+
+.table{
+    position: relative;
+}
+.table_body-details{
+    width: 18rem;
+    background-color: rgb(201, 201, 201);
+    border-radius: 20px;
+    padding: 1rem 2rem;
+    position: absolute;
+    right: -22rem;
+    margin-top: -2.5rem;
 }
 .entry{
     background-color: rgb(43, 199, 126)
