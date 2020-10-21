@@ -129,10 +129,11 @@ function CompanyProfile(){
                 <h2>Informações da Conta</h2>
                 <details open={true}>
                     <summary>Detalhes da sua Conta</summary>
-                        <p>Nome do Banco: {companyInfo[0].nomeEmpresa}</p>
+                        <p>Nome do Empresa: {companyInfo[0].nomeEmpresa}</p>
                         <p>Agencia: {companyInfo[0].dadosBancario.agencia}</p>
                         <p>Conta: {companyInfo[0].dadosBancario.conta}</p>
                         <p>Digito Conta: {companyInfo[0].dadosBancario.digitoConta}</p>
+                        <p>Nome Banco: {companyInfo[0].dadosBancario.nomeBanco}</p>
                 </details>  
                 <div className="chart">
                 <Chart  data={info} series={series} axes={axes} tooltip/>
