@@ -70,6 +70,7 @@
     position: absolute;
     right: -22rem;
     margin-top: -2.5rem;
+    line-height:1.2rem;
 }
 .entry{
     background-color: rgb(43, 199, 126)
@@ -92,4 +93,11 @@
 
 .table th:last-child {
     border-top-right-radius: 10px;
+}
+
+
+
+.filtro{
+    display: flex;
+    justify-content: flex-start;
 }
