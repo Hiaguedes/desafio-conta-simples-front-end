@@ -157,10 +157,10 @@ export default function ExtratoPage() {
                                         {
                                             (buttonClicked>-1 && index === buttonClicked)? /* Aqui também é legal eu verifico se o botão clicado não é o valor inicial e tem o mesmo index que o butão clicado */
                                             (<td className="table_body-details"> {/* pois pegaremos a linha desse index para criar um novo td (que ficará separado da tabela ) para mostrar os detalhes do extrato */}
-                                                <p>Horário da Transação: {arrayDataHorario[1]}</p>
-                                               {transaction.estabelecimento && <p>Nome do Estabelecimento Beneficiado: {transaction.estabelecimento}</p>}
-                                               {transaction.finalCartao && <p>Número final do Cartão: {transaction.finalCartao}</p>}
-                                               <p>Tipo da Transação: {transaction.tipoTransacao}</p>
+                                                <p>Horário da Transação: <strong className="table_details_strong">{arrayDataHorario[1]}</strong></p>
+                                               {transaction.estabelecimento && <p>Para onde: <strong className="table_details_strong">{transaction.estabelecimento}</strong></p>}
+                                               {transaction.finalCartao && <p>Número final do Cartão: <strong className="table_details_strong">{transaction.finalCartao}</strong></p>}
+                                               <p>Tipo da Transação: <strong className="table_details_strong">{transaction.tipoTransacao}</strong></p>
                                                {transaction.credito? 
                                                <p>Pagamento feito no crédito</p>
                                                 : <p>Pagamento feito no débito</p>

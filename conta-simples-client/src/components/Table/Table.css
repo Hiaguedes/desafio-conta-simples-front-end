@@ -59,17 +59,23 @@
     line-height:1.2rem;
 }
 
+.table_details_strong{
+    color: var(--primary-color);
+    font-weight: 700;
+    font-size: 1.1rem;
+}
+
 .table_body-details:before{
     content: "";
     width: 0; 
     height: 0; 
-    border-top: 10px solid transparent;
-    border-bottom: 10px solid transparent; 
+    border-top: 1.2rem solid transparent;
+    border-bottom: 1.2rem solid transparent; 
     
-    border-right:10px solid green; 
+    border-right:1.2rem solid green; 
     position: absolute;
-    top: 0;
-    left: 0;
+    top: -0.6rem;
+    left: -0.6rem;
 }
 
 .entry{
