@@ -60,6 +60,10 @@ export default function Cards() {
                 <h2>Uso dos seus cartões</h2>
                 {
                     cards.map((card,index)=>{
+                        const total = companyTransactions
+                                            .filter(transaction => transaction.finalCartao === card)
+                                            .reduce((acc,next) => acc + next.valor,0);
+
                         if(card !== null)
                         return(
                             <div key={index}>
@@ -71,12 +75,13 @@ export default function Cards() {
                                             <tr>
                                                 <th className="table_header-data">Data Transação</th>
                                                 <th className="table_header-data">Horário</th>
-                                                <th className="table_header-data">Valor</th>
                                                 <th className="table_header-data">Para onde</th>
+                                                <th className="table_header-data">Valor</th>
                                             </tr>
                                         </thead>
                                         <tbody>
                                     {
+
                                         companyTransactions.map((transaction,index) =>{
                                             const arrayDataHorario = transaction.dataTransacao.replace('T',' ').split(' '); // divido a string em dois arrays, a primeira contem o dia a segunda o horário
                                             const arrayDia = arrayDataHorario[0].split('-');
@@ -85,12 +90,18 @@ export default function Cards() {
                                                 <tr key={index} className="table_body-line">
                                                     <td className="table_body-data">{`${arrayDia[2]}/${arrayDia[1]}/${arrayDia[0]}`}</td>
                                                     <td className="table_body-data">{arrayDataHorario[1]}</td>
-                                                    <td className="table_body-data">{transaction.valor}</td>
                                                     <td className="table_body-data">{transaction.estabelecimento}</td>
+                                                    <td className="table_body-data">R$ {transaction.valor.toFixed(2)}</td>
                                                 </tr>)
                                             }
                                         })
                                     }
+                                    <tr className="table_body-line">
+                                        <td className="table_body-data">Total: </td>
+                                        <td className="table_body-data"></td>
+                                        <td className="table_body-data"></td>
+                                        <td className="table_body-data">R$ {total.toFixed(2)}</td>
+                                    </tr>
                                     </tbody>
                                     </table>
                                 </details>
