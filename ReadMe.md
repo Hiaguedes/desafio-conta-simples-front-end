@@ -1,46 +1,68 @@
-# Desafio FRONTEND
+# Desafio FRONTEND da Conta Simples
 
-Algumas observações:
+![Banner Conta Simples](https://cdn.fintechs.com.br/wp-content/uploads/2019/09/conta-simples-banner.jpg)
 
-Ao concluir o desafio, descrever no README como fazemos para rodar o projeto ou URL da aplicação "deployada";
-As apis consumidas devem ser "mockadas";
-Criar integração mockada com api REST ou GRAPHQL;
+## Desenvolvido com
+<center>
+    <img src="https://img.shields.io/badge/react%20-%2320232a.svg?&style=for-the-badge&logo=react&logoColor=%2361DAFB">
+    <img src="https://img.shields.io/badge/typescript%20-%23007ACC.svg?&style=for-the-badge&logo=typescript&logoColor=white">
+</center>
 
-1. Criar tela de Login para um Internet Banking; (done)
+## Para utilizar o projeto
 
-2. Criar a Home do Internet Banking da Conta Simples (dados da empresa, saldo, grafico de entrada e saida); (done com ressalvas)
+Vá no seu terminal favorito e clone o projeto na pasta que você quiser com o
 
-3. Criar extrato da empresa e detalhe do extrato;(done)
+```git
+git clone https://github.com/Hiaguedes/desafio-conta-simples-front-end.git
+```
 
-4. Permitir filtrar extrato por Tipo de Transação e flag de "Crédito" e "Débito";(done)
+Vá a pasta do projeto com
+
+```cmd
+cd conta-simples-client
+```
+
+Instale as dependencias do projeto com o node (necessário o node instalado)
+
+```cmd
+npm install
+```
+
+Aí você poderá ver a aplicação rodando com
+
+```cmd
+npm start
+```
+
+Aí você se deparará com a tela de login, que somente pede o cnpj e para isso você pode escolher qualquer cnpj que está presente no arquivo `empresas.json` e que são
+
+```cnpj
+13182905000171
+77253158000106
+46410071000163
+```
+
+E você pode se mover pela uri também somente mudando o id das rotas, o que seria uma baita falha de segurança mas como só tem o front end aqui eu não sei se teria como eu prevenir isso
+
+## Desafio
+
+Criar uma single page application que cumpra os seguintes desafios
+
+1. Criar tela de Login para um Internet Banking;
+
+2. Criar a Home do Internet Banking da Conta Simples (dados da empresa, saldo, grafico de entrada e saida);
+
+3. Criar extrato da empresa e detalhe do extrato;
+
+4. Permitir filtrar extrato por Tipo de Transação e flag de "Crédito" e "Débito";
 
 5. Criar um tela para mostrar transações agrupadas por cartão, apresentar finalCartao e valor;
 
-## Objetivos
+Sendo oferecidas pela conta simples dois arquivos JSON com os dados das empresas cadastradas e das transações feitas por elas
 
-Nosso foco é identificar suas habilidade não só em programação, mas também comportamental, portanto, iremos analisar os seguintes critérios:
+E esses dados das empresas e das transações feitas pelas empresas cadastradas na aplicação devem ser mockadas (para que seja possível simular a resposta do back end) e para isso foi optado o serviço gratuito do [Mocklab](https://get.mocklab.io/)
 
-- Capacidade em auto-aprendizado;
-
-- Comprometimento: Fazer mais do que o combinado;
-
-- Organização do código: Separação de módulos, view e model, back-end e front-end
-
-- Clareza: O README explica de forma resumida qual é o problema e como pode rodar a aplicação?
-
-- Assertividade: A aplicação está fazendo o que é esperado? Se tem algo faltando, o README explica o porquê?
-
-- Legibilidade do código (incluindo comentários)
-
-- Segurança: Existe alguma vulnerabilidade clara?
-
-- Cobertura de testes (Não esperamos cobertura completa)
-
-- Histórico de commits (estrutura e qualidade)
-
-- UX: A interface é de fácil uso e auto-explicativa
-
-## Créditos as imagens de
+## Créditos para os ícones usados no projeto
 
 Alert icon: <https://dinosoftlabs.com/>
 
@@ -50,11 +72,19 @@ Home Icon: <https://www.flaticon.com/authors/freepik>
 
 Card Icon: <https://www.flaticon.com/authors/pixel-perfect>
 
+Filter: <https://www.flaticon.com/authors/becris>
+
+## MUST DO
+
+Testes: Infelizmente não foi possível colocar os testes para as funcionalidades e para os comportamentos da função.
+
 ## TODO (coisas a mais que seria interessante fazer)
 
-Criar um botão que filtre os dados de entrada e saída por semana
+Criar um botão que filtre os dados de entrada e saída por semana (pois os dados da entrada não ficaram muito visíveis, já que os horários das entradas ficaram muito juntos)
 
 Componetizar os filtros na tabela do extrato
+
+Validador de CNPJ para o usuário digitar um cnpj válido
 
 Deixar mais responsivo
 
@@ -62,4 +92,6 @@ Estilizar mais
 
 Comentários
 
-Ver uma forma de fazer apenas uma requisição só e transferir as informações entre os componentes
+Ver uma forma de fazer apenas uma requisição só ao entrar na aplicação e transferir as informações entre os componentes
+
+Fazer shimmer efect no carregamento da página
