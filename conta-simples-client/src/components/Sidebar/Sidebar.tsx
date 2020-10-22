@@ -1,17 +1,17 @@
 import React from 'react';
 import './Sidebar.css';
 import {useParams, Link} from 'react-router-dom';
-
-interface Params {
+// sidebar (a barra lateral verde do lado esquerdo da página) é um componente comum a praticamente todas as páginas menos para o login, então separei ela das demais para ser reutilizada
+interface Params {//interface dos parametros da requisição para saber o id, por conta dos links que vou fazer
     id: string;
 }
 
-interface CompanyInfo {
+interface CompanyInfo {//interface para os dados da empresa que precisaremos aqui
     nomeEmpresa: string;
     saldo: number;
 }
 
-function Sidebar({nomeEmpresa,saldo}: CompanyInfo) {
+function Sidebar({nomeEmpresa,saldo}: CompanyInfo) {// recebo os parametros dos elementos pais que buscarão e usarão eles aqui
     const params = useParams<Params>();
     const {id} = params;
 

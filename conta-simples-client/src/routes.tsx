@@ -1,7 +1,7 @@
 import React from 'react';
 import {BrowserRouter, Route, Switch} from 'react-router-dom';
 
-
+// aqui estão as rotas da aplicação, onde cada rota aponta para uma página específica
 import LoginPage from './pages/LoginPage/LoginPage';
 import CompanyProfile from './pages/CompanyProfile/CompanyProfile';
 import ExtratoPage from './pages/ExtratoPage/ExtratoPage';

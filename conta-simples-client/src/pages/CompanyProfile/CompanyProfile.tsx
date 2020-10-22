@@ -3,13 +3,13 @@ import './CompanyProfile.css';
 import api from '../../services/api';
 import {useParams} from 'react-router-dom';
 import Sidebar from '../../components/Sidebar/Sidebar';
-import {Chart} from 'react-charts';
+import {Chart} from 'react-charts';//infelizmente não tem os types dessa biblioteca, essa biblioteca foi a mais simples que encontrei mas infelizmente não tem tanta opção assim
 
-interface Params {
+interface Params {//interface para os parâmetros da requisição
     id: string;
 }
 
-interface CompanyInfo {
+interface CompanyInfo {// interface para os dados da empresa
     nomeEmpresa: string;
     cnpj:string;
     saldo: number;
@@ -21,7 +21,7 @@ interface CompanyInfo {
     }[]
 }
 
-interface CompanyTransactions {
+interface CompanyTransactions {// interface para as transações
     dataTransacao: string;
     valor: number;
     finalCartao: number;
@@ -30,40 +30,40 @@ interface CompanyTransactions {
     credito: boolean;
 }
 
-interface DataChart {
+interface DataChart {// interface para as informações que preciso para a tabela
     primary: Date;
     secondary: number;
 }
 
 function CompanyProfile(){
     const params = useParams<Params>();
-    const {id} = params;
-    const [companyInfo, setCompanyInfo] = useState<CompanyInfo>()
-    const [companyTransactions, setCompanyTransactions] = useState<CompanyTransactions[]>([]);
-    const [dataEntry,setDataEntry] =useState<DataChart[]>([{primary: new Date(), secondary: 0}]);
-    const [dataExit,setDataExit] =useState<DataChart[]>([{primary: new Date(), secondary: 0}]);
+    const {id} = params;// guardo a id que é levada pela uri
+    const [companyInfo, setCompanyInfo] = useState<CompanyInfo>(); //hook para guardar as informações da empresa
+    const [companyTransactions, setCompanyTransactions] = useState<CompanyTransactions[]>([]);// hook para guardar as transações que a empresa fez
+    const [dataEntry,setDataEntry] =useState<DataChart[]>([{primary: new Date(), secondary: 0}]);// hook para guardar as transações de entrada da empresa, pro gráfico
+    const [dataExit,setDataExit] =useState<DataChart[]>([{primary: new Date(), secondary: 0}]);// hook para guardar as transações de saída da empresa, pro gráfico
 
     useEffect(()=>{
         api.get(`empresas/${id}`)
-        .then(res => setCompanyInfo(res.data))
+        .then(res => setCompanyInfo(res.data))// guardar as informações da empresa
 
         api.get(`transacoes/${id}`)
-        .then(res => setCompanyTransactions(res.data))
+        .then(res => setCompanyTransactions(res.data))// guardar as transações da empresa
 
         
     },[id])
 
     useEffect(()=>{
 
-        let dataEntryLine :DataChart[] = companyTransactions
-                    .filter(transaction => (transaction.tipoTransacao !== "CARD" && transaction.tipoTransacao !== "PAY"))
+        let dataEntryLine :DataChart[] = companyTransactions // aqui monto o objeto com os dados das transações de saída
+                    .filter(transaction => (transaction.tipoTransacao !== "CARD" && transaction.tipoTransacao !== "PAY"))// filtrando pelos tipos de transação que são de saída (pode ter uma forma melhor que essa só não percebi como mesmo)
                     .map(transaction =>{
                         return{
-                        primary: new Date(transaction.dataTransacao)
-                        ,secondary: transaction.valor}
+                        primary: new Date(transaction.dataTransacao) //só preciso do dia da transação
+                        ,secondary: transaction.valor} // e do dado que no caso é o valor
                         })
 
-    let dataExitLine :DataChart[] = companyTransactions
+    let dataExitLine :DataChart[] = companyTransactions // aqui faço o objeto com os dados das transações de entrada
     .filter(transaction => (transaction.tipoTransacao !== "TED_IN" && transaction.tipoTransacao !== "SLIP_IN"))
     .map(transaction =>{
         return{
@@ -75,22 +75,21 @@ function CompanyProfile(){
             setDataExit(dataExitLine)
     },[companyTransactions])
 
-          const series = React.useMemo(
+          const series = React.useMemo( //da biblioteca react-chart, eu podia componetizar essa tabela mas como ela só é usada aqui então o simples foi deixar ela aqui mesmo
             () => ({
               showPoints: false
             }),
             []
           );
         
-          const axes = React.useMemo(
+          const axes = React.useMemo(// informações dos eixos do gráfico
             () => [
               {
                 primary: true,
                 type: "time",
                 position: "bottom",
                 showGrid: false
-                // filterTicks: (ticks) =>
-                //   ticks.filter((date) => +timeDay.floor(date) === +date),
+
                 //eixo x
               },
               { 
@@ -105,7 +104,7 @@ function CompanyProfile(){
           );
 
 
-          const info = [
+          const info = [// aqui é onde monto o array de objetos que é interpretado pelo gráfico
             {
               // individual series
               label: "Entrada",
@@ -121,7 +120,7 @@ function CompanyProfile(){
         ]
 
 
-        if(!companyInfo) return <p>Carregando a página :)</p>
+        if(!companyInfo) return <p>Carregando a página :)</p>// enquanto os dados da empresão não carregados mostra essa mensagem (seria legal um shimmer effect)
 
     return(
         <main className="company-profile">
