@@ -18,3 +18,18 @@
     font-weight: 800;
 }
 
+.company_details{
+    margin: 1rem 0;
+}
+
+.company_summary{
+    line-height: 1.2rem;
+}
+
+.company_no-transactions{
+    position: absolute;
+    top: 50%;
+    font-size: 1.4rem;
+    font-weight: 800;
+}
+
