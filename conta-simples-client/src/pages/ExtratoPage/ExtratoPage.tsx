@@ -56,7 +56,7 @@ export default function ExtratoPage() {
         
     },[id])
 
-        if(!companyTransactions) return <p>Você não fez nenhuma transação conosco. Sinta-se a vontade para fazer quando você bem entender ;D</p>
+
         companyTransactions.forEach(ele => {
             if(!kindsOfPayment.includes(ele.tipoTransacao)) return setKindsOfPayment([...kindsOfPayment,ele.tipoTransacao])
         })
@@ -82,6 +82,10 @@ export default function ExtratoPage() {
             <Sidebar nomeEmpresa={companyInfo[0].nomeEmpresa} saldo={companyInfo[0].saldo}/>
             <div className="extract-page_container">
                 <h2 className="extract-page_title">Extrato da empresa</h2>
+                {companyTransactions.length ===0? 
+                (<p className="extract_no-transactions">Você não fez nenhuma transação conosco.
+                Sinta-se a vontade para fazer quando você bem entender ;D</p>):
+                <>
                 <div className="filtros_container">
                     <h3 className="filtros_titulo">Filtros para a Tabela</h3>
                     <div className="filtro">
@@ -106,6 +110,8 @@ export default function ExtratoPage() {
                     </div>
                     </div>
                 </div>
+                
+                
                 <div className="table_container">
                 <table className="table">
                     <thead className="table_header">
@@ -171,6 +177,8 @@ export default function ExtratoPage() {
                 </tbody>
                 </table>
                 </div>
+                </>
+            }
             </div>
         </main>
     )
