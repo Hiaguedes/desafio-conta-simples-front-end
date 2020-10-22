@@ -90,7 +90,7 @@ export default function ExtratoPage() {
 
                     <div className="filtro_individual">
                     <p>Tipo da Transação: </p>
-                    <select onChange={(e) => handleTransactionType(e)}>
+                    <select className="filtro_select" onChange={(e) => handleTransactionType(e)}>
                         <option value="any">Qualquer</option>
                         {kindsOfPayment.map((ele,index)=>{ //faz a caixa de seleção do filtro da transação
                         return(<option key={index} value={ele}>{ele.replace('_',' ')}</option>); 
@@ -100,7 +100,7 @@ export default function ExtratoPage() {
                     </div>
                     <div className="filtro_individual">
                         <p>Crédito ou Débito?</p>
-                    <select onChange={(e) => handlePaymentFilter(e)}>
+                    <select className="filtro_select" onChange={(e) => handlePaymentFilter(e)}>
                         <option value="any">Qualquer</option>
                         <option value="true">Crédito</option> {/*Desculpa a ignorância mas não sei mesmo o que seria TED IN ou SLIP IN hahaha (muito menos o SLIP e como não achei nada na internet então sorry, tenho muito o que aprender ainda :D)*/}
                         <option value="false">Débito</option>

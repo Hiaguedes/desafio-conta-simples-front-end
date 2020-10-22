@@ -16,7 +16,8 @@
 
 .filtro{
     display: flex;
-    justify-content: flex-start;
+    justify-content: center;
+    margin-top: 1rem;
 }
 .filtros_container{
     margin: 1rem 0 2rem 0;
@@ -24,6 +25,20 @@
 .filtros_titulo{
     font-weight:700;
     font-size:1.2rem;
+}
+
+.filtros_titulo:before{
+    content: "";
+    display: inline-block;
+    width: 1rem;
+    height: 1rem;
+    background: url(../../img/filter.svg) no-repeat;
+    background-size: 1rem
+}
+
+.filtro_select{
+    padding: 0.5rem;
+    border: none
 }
 
 .filtro_individual{
