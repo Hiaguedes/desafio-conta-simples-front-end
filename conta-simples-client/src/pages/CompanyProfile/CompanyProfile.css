@@ -24,6 +24,7 @@
 
 .company_summary{
     line-height: 1.2rem;
+    cursor: pointer;
 }
 
 .company_no-transactions{
