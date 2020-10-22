@@ -3,6 +3,7 @@ import Sidebar from '../../components/Sidebar/Sidebar';
 import './ExtratoPage.css';
 import api from '../../services/api';
 import {useParams} from 'react-router-dom';
+import '../../components/Table/Table.css';
 
 interface CompanyInfo {
     nomeEmpresa: string;

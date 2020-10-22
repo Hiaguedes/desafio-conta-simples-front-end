@@ -3,6 +3,7 @@ import './Cards.css';
 import api from '../../services/api';
 import {useParams} from 'react-router-dom';
 import Sidebar from '../../components/Sidebar/Sidebar';
+import '../../components/Table/Table.css';
 
 interface Params {
     id: string;
@@ -56,21 +57,22 @@ export default function Cards() {
         <div className="cards-page">
             <Sidebar nomeEmpresa={companyInfo[0].nomeEmpresa} saldo={companyInfo[0].saldo}/>
             <div className="cards-container">
+                <h2>Uso dos seus cartões</h2>
                 {
                     cards.map((card,index)=>{
                         if(card !== null)
                         return(
                             <div key={index}>
                                 <h2>Transações feitas com o cartão com final: <strong>{card}</strong></h2>
-                                <details>
+                                <details className="table_container">
                                     <summary>Transações Feitas com o cartão</summary>
-                                    <table>
-                                        <thead>
+                                    <table className="table">
+                                        <thead className="table_header">
                                             <tr>
-                                                <th>Data Transação</th>
-                                                <th>Horário</th>
-                                                <th>Valor</th>
-                                                <th>Para onde</th>
+                                                <th className="table_header-data">Data Transação</th>
+                                                <th className="table_header-data">Horário</th>
+                                                <th className="table_header-data">Valor</th>
+                                                <th className="table_header-data">Para onde</th>
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -80,11 +82,11 @@ export default function Cards() {
                                             const arrayDia = arrayDataHorario[0].split('-');
                                             if(transaction.finalCartao === card){
                                                 return(
-                                                <tr key={index}>
-                                                    <td>{`${arrayDia[2]}/${arrayDia[1]}/${arrayDia[0]}`}</td>
-                                                    <td>{arrayDataHorario[1]}</td>
-                                                    <td>{transaction.valor}</td>
-                                                    <td>{transaction.estabelecimento}</td>
+                                                <tr key={index} className="table_body-line">
+                                                    <td className="table_body-data">{`${arrayDia[2]}/${arrayDia[1]}/${arrayDia[0]}`}</td>
+                                                    <td className="table_body-data">{arrayDataHorario[1]}</td>
+                                                    <td className="table_body-data">{transaction.valor}</td>
+                                                    <td className="table_body-data">{transaction.estabelecimento}</td>
                                                 </tr>)
                                             }
                                         })
