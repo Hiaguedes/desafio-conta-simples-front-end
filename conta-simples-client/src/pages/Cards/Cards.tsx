@@ -67,9 +67,9 @@ export default function Cards() {
                         if(card !== null)
                         return(
                             <div key={index}>
-                                <h2>Transações feitas com o cartão com final: <strong>{card}</strong></h2>
-                                <details className="table_container">
-                                    <summary>Transações Feitas com o cartão</summary>
+                                <h2 className="cards_transactions">Número final do cartão: <strong className="cards_transactions--strong">{card}</strong></h2>
+                                <details className="table_container" open={index == 0 ? true: false}>
+                                    <summary className="cards_transactions--summary">Transações Feitas com o cartão</summary>
                                     <table className="table">
                                         <thead className="table_header">
                                             <tr>

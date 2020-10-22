@@ -11,3 +11,17 @@
     font-size: 1.5rem;
     font-weight: 800;
 }
+
+.cards_transactions{
+    margin: 1rem 0;
+    font-size: 1.2rem;
+}
+
+.cards_transactions--strong{
+    font-weight: 800;
+    color: var(--primary-color);
+}
+
+.cards_transactions--summary{
+    font-size: 1.1rem;
+}
