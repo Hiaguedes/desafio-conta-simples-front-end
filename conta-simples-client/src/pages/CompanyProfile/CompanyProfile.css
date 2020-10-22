@@ -20,11 +20,19 @@
 
 .company_details{
     margin: 1rem 0;
+    line-height: 1.2rem;
+}
+
+.company_details_strong{
+    font-size: 1.1rem;
+    color: var(--primary-color);
+    font-weight: 800;
 }
 
 .company_summary{
     line-height: 1.2rem;
     cursor: pointer;
+    margin-bottom: 1rem;
 }
 
 .company_no-transactions{

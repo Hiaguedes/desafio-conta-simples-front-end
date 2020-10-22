@@ -129,11 +129,11 @@ function CompanyProfile(){
                 <h2 className="company_title">Informações da Conta</h2>
                 <details className="company_details" open={true}>
                     <summary className="company_summary">Detalhes da sua Conta</summary>
-                        <p>Nome do Empresa: {companyInfo[0].nomeEmpresa}</p>
-                        <p>Banco: {companyInfo[0].dadosBancario.bancoNome}</p>
-                        <p>Agencia: {companyInfo[0].dadosBancario.agencia}</p>
-                        <p>Conta: {companyInfo[0].dadosBancario.conta}</p>
-                        <p>Digito Conta: {companyInfo[0].dadosBancario.digitoConta}</p>
+                        <p>Nome do Empresa: <strong className="company_details_strong">{companyInfo[0].nomeEmpresa}</strong></p>
+                        <p>Banco: <strong className="company_details_strong">{companyInfo[0].dadosBancario.bancoNome}</strong></p>
+                        <p>Agencia: <strong className="company_details_strong">{companyInfo[0].dadosBancario.agencia}</strong></p>
+                        <p>Conta: <strong className="company_details_strong">{companyInfo[0].dadosBancario.conta}</strong></p>
+                        <p>Digito: <strong className="company_details_strong">{companyInfo[0].dadosBancario.digitoConta}</strong></p>
                 </details>
                 {  companyTransactions.length ===0 ? 
                 (<p className="company_no-transactions">Você não fez nenhuma transação conosco.
