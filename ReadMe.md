@@ -8,7 +8,7 @@
     <img src="https://img.shields.io/badge/typescript%20-%23007ACC.svg?&style=for-the-badge&logo=typescript&logoColor=white">
 </center>
 
-## Para utilizar o projeto
+## Para rodar o projeto
 
 Vá no seu terminal favorito e clone o projeto na pasta que você quiser com o
 
@@ -76,7 +76,7 @@ Filter: <https://www.flaticon.com/authors/becris>
 
 ## MUST DO
 
-Testes: Infelizmente não foi possível colocar os testes para as funcionalidades e para os comportamentos da função.
+Testes: Infelizmente não foi possível colocar os testes para as funcionalidades e para os comportamentos da função. Confesso que o que sei de testes é insuficiente para testar toda essa aplicação
 
 ## TODO (coisas a mais que seria interessante fazer)
 
