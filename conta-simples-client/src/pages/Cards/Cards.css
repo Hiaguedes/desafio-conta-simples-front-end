@@ -12,18 +12,25 @@
     font-weight: 800;
 }
 
-.cards_transactions{
-    margin: 1rem 0;
+.cards_transactions_container{
+    display: flex;
+    align-items: baseline;
+    justify-content: space-around;
+}
+
+.cards_transactions_title{
+    margin: 1rem 10rem 0 0;
     font-size: 1.2rem;
 }
 
-.cards_transactions--strong{
+.cards_transactions_title--strong{
     font-weight: 800;
     color: var(--primary-color);
 }
 
 .cards_transactions--summary{
     font-size: 1.1rem;
+    cursor: pointer;
 }
 
 .card_no-transactions{
