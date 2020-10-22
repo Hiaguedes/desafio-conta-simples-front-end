@@ -120,7 +120,8 @@ function CompanyProfile(){
               }
         ]
 
-    if(!companyInfo) return <p>Empresa não encontrada error 404</p>
+
+        if(!companyInfo) return <p>Carregando a página :)</p>
 
     return(
         <main className="company-profile">

@@ -51,7 +51,7 @@ export default function Cards() {
         if(!cards.includes(ele.finalCartao)) return setCards([...cards,ele.finalCartao])
     })
 
-    if(!companyInfo) return <p>Empresa não encontrada error 404</p>
+    if(!companyInfo) return <p>Carregando a página :)</p>
 
     return (
         <div className="cards-page">

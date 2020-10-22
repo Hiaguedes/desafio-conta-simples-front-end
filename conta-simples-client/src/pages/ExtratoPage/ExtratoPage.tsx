@@ -75,7 +75,7 @@ export default function ExtratoPage() {
     }
     
 
-    if(!companyInfo) return <p>Empresa não encontrada erro 404</p>
+    if(!companyInfo) return <p>Carregando a página :)</p>
     //console.log(selectTransactionFilter,selectPaymentFilter)
     return(
         <main className="extract-page">
