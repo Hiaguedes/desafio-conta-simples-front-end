@@ -126,7 +126,7 @@ function CompanyProfile(){
         <main className="company-profile">
             <Sidebar nomeEmpresa={companyInfo[0].nomeEmpresa} saldo={companyInfo[0].saldo}/>
             <div className="company-container">
-                <h2>Informações da Conta</h2>
+                <h2 className="company_title">Informações da Conta</h2>
                 <details open={true}>
                     <summary>Detalhes da sua Conta</summary>
                         <p>Nome do Empresa: {companyInfo[0].nomeEmpresa}</p>

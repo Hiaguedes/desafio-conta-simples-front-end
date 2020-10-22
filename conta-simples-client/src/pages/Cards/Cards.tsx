@@ -57,7 +57,7 @@ export default function Cards() {
         <div className="cards-page">
             <Sidebar nomeEmpresa={companyInfo[0].nomeEmpresa} saldo={companyInfo[0].saldo}/>
             <div className="cards-container">
-                <h2>Uso dos seus cartões</h2>
+                <h2 className="cards_title">Uso dos seus cartões</h2>
                 {
                     cards.map((card,index)=>{
                         const total = companyTransactions
