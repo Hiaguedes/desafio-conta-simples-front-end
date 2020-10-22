@@ -58,6 +58,10 @@ export default function Cards() {
             <Sidebar nomeEmpresa={companyInfo[0].nomeEmpresa} saldo={companyInfo[0].saldo}/>
             <div className="cards-container">
                 <h2 className="cards_title">Uso dos seus cartões</h2>
+                {companyTransactions.length ===0? 
+                (<p className="card_no-transactions">Você não fez nenhuma transação conosco.
+                Sinta-se a vontade para fazer quando você bem entender ;D</p>):
+                <>
                 {
                     cards.map((card,index)=>{
                         const total = companyTransactions
@@ -108,6 +112,8 @@ export default function Cards() {
                             </div>
                         )
                     })
+                }
+                </>
                 }
             </div>
         </div>

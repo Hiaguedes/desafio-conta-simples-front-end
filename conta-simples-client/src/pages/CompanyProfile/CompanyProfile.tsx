@@ -127,17 +127,21 @@ function CompanyProfile(){
             <Sidebar nomeEmpresa={companyInfo[0].nomeEmpresa} saldo={companyInfo[0].saldo}/>
             <div className="company-container">
                 <h2 className="company_title">Informações da Conta</h2>
-                <details open={true}>
-                    <summary>Detalhes da sua Conta</summary>
+                <details className="company_details" open={true}>
+                    <summary className="company_summary">Detalhes da sua Conta</summary>
                         <p>Nome do Empresa: {companyInfo[0].nomeEmpresa}</p>
+                        <p>Banco: {companyInfo[0].dadosBancario.bancoNome}</p>
                         <p>Agencia: {companyInfo[0].dadosBancario.agencia}</p>
                         <p>Conta: {companyInfo[0].dadosBancario.conta}</p>
                         <p>Digito Conta: {companyInfo[0].dadosBancario.digitoConta}</p>
-                        <p>Nome Banco: {companyInfo[0].dadosBancario.nomeBanco}</p>
-                </details>  
-                <div className="chart">
+                </details>
+                {  companyTransactions.length ===0 ? 
+                (<p className="company_no-transactions">Você não fez nenhuma transação conosco.
+                     Sinta-se a vontade para fazer quando você bem entender ;D</p>):
+                (<div className="chart">
                 <Chart  data={info} series={series} axes={axes} tooltip/>
-                </div>
+                </div>)
+                }
             </div>
         </main>
     )

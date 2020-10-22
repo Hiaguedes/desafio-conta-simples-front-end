@@ -25,3 +25,10 @@
 .cards_transactions--summary{
     font-size: 1.1rem;
 }
+
+.card_no-transactions{
+    position: absolute;
+    top: 50%;
+    font-size: 1.4rem;
+    font-weight: 800;
+}

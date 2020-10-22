@@ -29,3 +29,10 @@
 .filtro_individual{
     margin-right: 1rem;
 }
+
+.extract_no-transactions{
+    position: absolute;
+    top: 50%;
+    font-size: 1.4rem;
+    font-weight: 800;
+}
