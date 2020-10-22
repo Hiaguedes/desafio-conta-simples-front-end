@@ -70,9 +70,9 @@ export default function Cards() {
 
                         if(card !== null)
                         return(
-                            <div key={index}>
-                                <h2 className="cards_transactions">Número final do cartão: <strong className="cards_transactions--strong">{card}</strong></h2>
-                                <details className="table_container" open={index == 0 ? true: false}>
+                            <div key={index} className="cards_transactions_container">
+                                <h2 className="cards_transactions_title">Número final do cartão: <strong className="cards_transactions_title--strong">{card}</strong></h2>
+                                <details className="table_container" open={index === 0 ? true: false}>
                                     <summary className="cards_transactions--summary">Transações Feitas com o cartão</summary>
                                     <table className="table">
                                         <thead className="table_header">
@@ -98,6 +98,7 @@ export default function Cards() {
                                                     <td className="table_body-data">R$ {transaction.valor.toFixed(2)}</td>
                                                 </tr>)
                                             }
+                                            return(<></>)
                                         })
                                     }
                                     <tr className="table_body-line">
@@ -111,6 +112,7 @@ export default function Cards() {
                                 </details>
                             </div>
                         )
+                        return(<></>);
                     })
                 }
                 </>
